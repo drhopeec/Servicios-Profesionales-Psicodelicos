@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jonathan Chávez - Médico Psicodélico y Funcional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #13005d;
+            color: #f5f5dc;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ======================== NAVEGACIÓN ======================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(19, 0, 93, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(34, 163, 163, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 16px;
+            font-weight: 700;
+            color: #22a3a3;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #f5f5dc;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a:hover {
+            color: #22a3a3;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ======================== TIPOGRAFÍA ======================== */
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #f5f5dc;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            color: #f5f5dc;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #f5f5dc;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #f5f5dc;
+        }
+
+        /* ======================== BOTONES ======================== */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: #22a3a3;
+            color: #13005d;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            border: 2px solid #22a3a3;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #22a3a3;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #22a3a3;
+            border: 2px solid #22a3a3;
+        }
+
+        .btn-outline:hover {
+            background-color: #22a3a3;
+            color: #13005d;
+        }
+
+        /* ======================== HERO ======================== */
+        section {
+            padding: 80px 0;
+        }
+
+        #hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+
+        .hero-logo {
+            font-size: 14px;
+            font-weight: 600;
+            color: #22a3a3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        #hero h1 {
+            font-size: 56px;
+            max-width: 900px;
+            margin: 0 auto 25px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #b8a49d;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-weight: 400;
+        }
+
+        .objections {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            text-align: left;
+            list-style: none;
+        }
+
+        .objections li {
+            padding: 12px 0;
+            font-size: 16px;
+            color: #f5f5dc;
+        }
+
+        .objections li:before {
+            content: "✘ ";
+            color: #22a3a3;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        /* ======================== TARJETAS ======================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: rgba(34, 163, 163, 0.08);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            padding: 40px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            background-color: rgba(34, 163, 163, 0.12);
+            border-color: rgba(34, 163, 163, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #22a3a3;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #f5f5dc;
+            line-height: 1.7;
+        }
+
+        /* ======================== SECCIONES SOBRE MÍ ======================== */
+        #about {
+            background-color: rgba(34, 163, 163, 0.05);
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #f5f5dc;
+        }
+
+        /* ======================== BULLETS ======================== */
+        .bullets {
+            max-width: 750px;
+            margin: 40px auto 0;
+            list-style: none;
+        }
+
+        .bullets li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 16px;
+            color: #f5f5dc;
+            line-height: 1.7;
+        }
+
+        .bullets li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #22a3a3;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* ======================== SERVICIOS ======================== */
+        #services {
+            background-color: rgba(34, 163, 163, 0.05);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-block {
+            background-color: rgba(34, 163, 163, 0.08);
+            border-left: 4px solid #22a3a3;
+            padding: 35px;
+            border-radius: 2px;
+        }
+
+        .service-block h3 {
+            color: #22a3a3;
+            margin-bottom: 15px;
+        }
+
+        .service-block p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .services-closing {
+            max-width: 750px;
+            margin: 50px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(34, 163, 163, 0.2);
+            text-align: center;
+            font-size: 15px;
+            color: #b8a49d;
+        }
+
+        /* ======================== PASOS ======================== */
+        .steps {
+            max-width: 800px;
+            margin: 50px auto 0;
+            list-style: none;
+        }
+
+        .steps li {
+            margin-bottom: 40px;
+            padding-left: 60px;
+            position: relative;
+        }
+
+        .steps li:before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            background-color: #22a3a3;
+            color: #13005d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .steps li h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .steps li p {
+            font-size: 15px;
+            color: #f5f5dc;
+        }
+
+        /* ======================== MÉTODO CLÍNICO ======================== */
+        #method {
+            background-color: rgba(34, 163, 163, 0.05);
+        }
+
+        .method-intro {
+            max-width: 750px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 17px;
+            color: #f5f5dc;
+        }
+
+        .method-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .phase {
+            background-color: rgba(34, 163, 163, 0.1);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .phase h3 {
+            color: #ffd700;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .phase p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .method-closing {
+            max-width: 750px;
+            margin: 50px auto 0;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(34, 163, 163, 0.2);
+            font-size: 15px;
+            color: #b8a49d;
+            font-style: italic;
+        }
+
+        /* ======================== MODELOS ======================== */
+        #models {
+            background-color: rgba(34, 163, 163, 0.05);
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .model-block {
+            background-color: rgba(34, 163, 163, 0.08);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            padding: 35px;
+            border-radius: 4px;
+        }
+
+        .model-block h3 {
+            color: #22a3a3;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .model-block p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .models-closing {
+            max-width: 750px;
+            margin: 50px auto 0;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(34, 163, 163, 0.2);
+            font-size: 15px;
+            color: #b8a49d;
+        }
+
+        /* ======================== TESTIMONIOS ======================== */
+        #testimonials {
+            background-color: rgba(34, 163, 163, 0.05);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial {
+            background-color: rgba(34, 163, 163, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 30px;
+            border-radius: 2px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .testimonial p:first-child {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #f5f5dc;
+        }
+
+        .testimonial p:last-child {
+            color: #22a3a3;
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        /* ======================== FAQ ======================== */
+        #faq {
+            background-color: rgba(34, 163, 163, 0.05);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            background-color: rgba(34, 163, 163, 0.08);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            border-radius: 4px;
+            padding: 25px;
+        }
+
+        .faq-item h3 {
+            color: #22a3a3;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #f5f5dc;
+            margin-bottom: 0;
+        }
+
+        /* ======================== CTA FINAL ======================== */
+        #final-cta {
+            background-color: rgba(34, 163, 163, 0.1);
+            text-align: center;
+        }
+
+        #final-cta h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .final-text {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #f5f5dc;
+        }
+
+        /* ======================== CONTACTO ======================== */
+        #contact {
+            background-color: rgba(34, 163, 163, 0.05);
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        .contact-info a {
+            color: #22a3a3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #ffd700;
+        }
+
+        /* ======================== FOOTER ======================== */
+        footer {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(34, 163, 163, 0.2);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #b8a49d;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #22a3a3;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+        }
+
+        /* ======================== RESPONSIVE ======================== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            #hero {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            #hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .cards-grid,
+            .services-grid,
+            .method-phases,
+            .models-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps li {
+                padding-left: 70px;
+            }
+
+            .steps li:before {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            #hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Dr. Jonathan Chávez</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#benefits">Beneficios</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#method">Método</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-logo">Médico Psicodélico y Funcional</div>
+            <h1>Respaldo médico clínico para centros que usan psilocibina</h1>
+            <p class="hero-subtitle">Acompaño a tu centro con criterio médico, seguridad clínica y documentación clara, sin interferir con la visión terapéutica de tu proyecto.</p>
+
+            <ul class="objections">
+                <li>No imposición de marca</li>
+                <li>No protocolos genéricos</li>
+                <li>No trabajo médico improvisado</li>
+                <li>No decisiones clínicas en soledad</li>
+            </ul>
+
+            <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS CLAVE -->
+    <section id="benefits">
+        <div class="container">
+            <h2>Lo que gana tu centro al trabajar conmigo</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Seguridad clínica</h3>
+                    <p>Evaluaciones médicas estructuradas, criterios de aptitud claros y reducción del riesgo físico y farmacológico en cada sesión.</p>
+                </div>
+                <div class="card">
+                    <h3>Claridad y documentación</h3>
+                    <p>Informes clínicos comprensibles, criterios explícitos de decisión y registros que respaldan la práctica ética de tu centro.</p>
+                </div>
+                <div class="card">
+                    <h3>Colaboración sencilla</h3>
+                    <p>Me integro al equipo como médico externo, respetando roles, tiempos y protocolos internos, para facilitar el trabajo, no complicarlo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="about">
+        <div class="container">
+            <h2>Sobre el Dr. Jonathan Chávez</h2>
+            <div class="about-text">
+                <p>Soy médico general y funcional, con formación en ciencia y medicina psicodélica. Acompaño procesos terapéuticos profundos desde la medicina, poniendo especial foco en seguridad, fisiología y hábitos de vida.</p>
+                <p>Mi rol es ofrecer criterio clínico, estructura y respaldo médico a los centros que trabajan con psilocibina, siempre dentro del marco legal y respetando la autonomía de cada equipo terapéutico.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MI ROL MÉDICO -->
+    <section id="my-role">
+        <div class="container">
+            <h2>Mi rol médico dentro del equipo terapéutico</h2>
+            <p class="role-intro">No soy el facilitador ni el terapeuta principal. Soy el médico que sostiene la seguridad clínica del proceso.</p>
+
+            <ul class="bullets">
+                <li>Evalúo la salud física, la medicación y los riesgos médicos de los participantes.</li>
+                <li>Propongo ajustes prudentes cuando es necesario, siempre documentados.</li>
+                <li>Acompaño al equipo en decisiones críticas antes, durante y después de la sesión.</li>
+                <li>Respeto los límites de mi rol y la estructura del centro.</li>
+                <li>Trabajo con absoluta confidencialidad y ética profesional.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SERVICIOS PROFESIONALES -->
+    <section id="services">
+        <div class="container">
+            <h2>Servicios profesionales para centros que usan psilocibina</h2>
+            <div class="services-grid">
+                <div class="service-block">
+                    <h3>Evaluación médica y screening clínico</h3>
+                    <p>Historia clínica específica para contextos psicodélicos, revisión de medicación, criterios de exclusión y decisión clara: apto, apto con condiciones o no apto.</p>
+                </div>
+                <div class="service-block">
+                    <h3>Preparación fisiológica y optimización de hábitos</h3>
+                    <p>Recomendaciones médicas sobre sueño, nutrición, manejo del estrés y, cuando aplica, ajuste gradual de medicación dentro del marco legal de cada país.</p>
+                </div>
+                <div class="service-block">
+                    <h3>Soporte médico remoto durante la sesión</h3>
+                    <p>Disponibilidad por llamada o videollamada para apoyar decisiones de seguridad, manejo inicial de eventos físicos y criterios de escalamiento.</p>
+                </div>
+                <div class="service-block">
+                    <h3>Integración médica y seguimiento</h3>
+                    <p>Revisión post-sesión de síntomas físicos, sueño, energía y marcadores relevantes, con recomendaciones claras para sostener los cambios en el tiempo.</p>
+                </div>
+            </div>
+            <p class="services-closing">Cada servicio incluye documentación clínica que respalda las decisiones del equipo y fortalece el marco ético del centro.</p>
+        </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS JUNTOS -->
+    <section id="together">
+        <div class="container">
+            <h2>Cómo colaboro con tu centro</h2>
+            <ol class="steps">
+                <li data-step="1">
+                    <h3>Conversemos sobre tu centro</h3>
+                    <p>Me cuentas cómo trabajan hoy, qué tipo de procesos ofrecen y qué necesitan del área médica.</p>
+                </li>
+                <li data-step="2">
+                    <h3>Definimos el alcance clínico</h3>
+                    <p>Acordamos si empezar por screening, soporte en sesiones, integración o una combinación de estos.</p>
+                </li>
+                <li data-step="3">
+                    <h3>Evaluación de participantes</h3>
+                    <p>Atiendo a los candidatos, emito decisiones de aptitud e informes claros para tu equipo.</p>
+                </li>
+                <li data-step="4">
+                    <h3>Acompañamiento durante las experiencias</h3>
+                    <p>Si lo requieren, estoy disponible en la ventana de sesión para apoyar al equipo ante eventos clínicos.</p>
+                </li>
+                <li data-step="5">
+                    <h3>Integración médica y mejora continua</h3>
+                    <p>Doy seguimiento post-sesión y, si la colaboración es estable, revisamos y mejoramos juntos los protocolos médicos.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- MÉTODO CLÍNICO -->
+    <section id="method">
+        <div class="container">
+            <h2>Mi método clínico: Mountain Method</h2>
+            <p class="method-intro">Trabajo con un marco clínico propio, inspirado en la literatura científica y la práctica integrativa. Es simple de entender y fácil de integrar a tus protocolos.</p>
+
+            <div class="method-phases">
+                <div class="phase">
+                    <h3>Fase 1 · Evaluación</h3>
+                    <p>Historia clínica específica, criterios de exclusión y análisis de medicación y condiciones médicas relevantes.</p>
+                </div>
+                <div class="phase">
+                    <h3>Fase 2 · Preparación</h3>
+                    <p>Ajustes fisiológicos y de hábitos que ayudan al participante a llegar mejor preparado a la experiencia.</p>
+                </div>
+                <div class="phase">
+                    <h3>Fase 3 · Acompañamiento</h3>
+                    <p>Soporte médico remoto para ayudar al equipo a decidir cómo actuar ante eventos físicos o cambios relevantes.</p>
+                </div>
+                <div class="phase">
+                    <h3>Fase 4 · Integración</h3>
+                    <p>Consultas médicas de seguimiento para cuidar el cuerpo y traducir la experiencia en cambios sostenibles de salud.</p>
+                </div>
+            </div>
+
+            <p class="method-closing">Comparto lineamientos y plantillas de este método bajo una licencia de uso interno mientras dure nuestra colaboración.</p>
+        </div>
+    </section>
+
+    <!-- MODELOS DE COLABORACIÓN -->
+    <section id="models">
+        <div class="container">
+            <h2>Modelos de colaboración</h2>
+            <div class="models-grid">
+                <div class="model-block">
+                    <h3>Colaboración por paciente</h3>
+                    <p>Ideal para centros que recién empiezan o tienen pocos participantes al mes. Atiendo a quienes tu centro me derive para evaluación, preparación e integración, y entrego informes clínicos claros para el equipo.</p>
+                </div>
+                <div class="model-block">
+                    <h3>Acuerdos continuos con el centro</h3>
+                    <p>Para centros con mayor volumen o que buscan un respaldo médico estable. Definimos juntos cuántos screenings, consultas y horas de soporte remoto necesitas, y revisamos periódicamente tus protocolos clínicos para mejorarlos.</p>
+                </div>
+            </div>
+            <p class="models-closing">En ambos casos, diseñamos un acuerdo a medida, acorde a la realidad de tu centro y a la regulación de tu país.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>Lo que otros profesionales destacan de mi trabajo</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Muy satisfecho de conocer a un profesional médico experto y sumergido en el tema de la psilocibina. No deja ningún aspecto de la salud de lado y cubre los protocolos de seguridad, desde el rescate farmacológico hasta el consentimiento informado. Ético, humano y muy comprometido con el paciente."</p>
+                    <p>— Sergio Armando Salazar Arriola, Médico</p>
+                </div>
+                <div class="testimonial">
+                    <p>"La experiencia con Jonathan ha sido muy profesional, aportando bases en estudios y experiencia. Sus recomendaciones han dado valor a nuestro protocolo, reforzando puntos sobre riesgos y factores de exclusión. La información ha sido extremadamente útil y clara."</p>
+                    <p>— James Emerson Mazariegos, Director de centro psicodélico</p>
+                </div>
+                <div class="testimonial">
+                    <p>"La atención de Jonathan es absoluta. Su capacidad como médico y su pasión por la medicina psicodélica lo convierten en la referencia a la que recurriré siempre que mis clientes lo necesiten. Es de los pocos médicos funcionales en español con información actualizada, útil y aplicable."</p>
+                    <p>— Montserrat Morán Zebadúa, Health Coach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Es obligatorio que un centro tenga apoyo médico?</h3>
+                    <p>Depende de la regulación de cada país y del tipo de intervención. Más allá de lo legal, tener criterio clínico externo reduce riesgos y mejora la calidad de las decisiones del equipo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Trabajas de forma presencial o solo remota?</h3>
+                    <p>Vivo en Ecuador y puedo trabajar de forma presencial en contextos específicos dentro del país. Para centros en otros países, colaboro de forma remota como apoyo clínico externo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Interfieres en el rol del terapeuta o facilitador?</h3>
+                    <p>No. Mi rol se limita a la parte médica: evaluación de riesgos, soporte clínico y seguimiento físico. Respeto la metodología terapéutica de cada centro.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Das consejos sobre el uso de sustancias o dosis?</h3>
+                    <p>No asesoro sobre acceso ni uso de sustancias. Mi trabajo se centra en la evaluación médica, la seguridad y el acompañamiento clínico en contextos donde el centro ya trabaja dentro de un marco regulado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLAMADO FINAL A LA ACCIÓN -->
+    <section id="final-cta">
+        <div class="container">
+            <h2>Hablemos sobre tu centro y su marco clínico</h2>
+            <p class="final-text">Si quieres que tu centro trabaje con más seguridad, claridad y respaldo médico, podemos diseñar una colaboración a medida. Cuéntame cómo trabajan hoy y qué necesitan.</p>
+            <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> contacto@drjonathanchavez.com</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/593989760520">+593 98 976 0520</a></p>
+                <p><strong>Ubicación:</strong> Ecuador · Colaboración remota para centros en Latinoamérica</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Sígueme en:</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@doctorhopeec" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://www.linkedin.com/in/doctorhope/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
