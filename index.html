@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Jonathan Chávez - Médico Psicodélico y Funcional</title>
+    <title>Dr. Jonathan Chávez - Protocolo de Cribado para Centros de Psilocibina</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -183,17 +183,22 @@
             font-weight: 400;
         }
 
+        .hero-cta-wrapper {
+            margin-bottom: 60px;
+        }
+
         .objections {
             max-width: 600px;
-            margin: 0 auto 50px;
+            margin: 0 auto;
             text-align: left;
             list-style: none;
         }
 
         .objections li {
             padding: 12px 0;
-            font-size: 16px;
+            font-size: 15px;
             color: #f5f5dc;
+            line-height: 1.6;
         }
 
         .objections li:before {
@@ -237,99 +242,163 @@
         }
 
         /* ======================== SECCIONES GENERALES ======================== */
-        #about {
-            background-color: rgba(34, 163, 163, 0.05);
+        #problem {
+            background-color: #fdf9f0;
         }
 
-        #fit {
-            background-color: #13005d;
+        #problem h2,
+        #problem h3,
+        #problem p {
+            color: #13005d;
         }
 
-        .about-text {
-            max-width: 750px;
-            margin: 0 auto;
-            font-size: 17px;
-            line-height: 1.8;
-            color: #f5f5dc;
+        #problem .card {
+            background-color: rgba(19, 0, 93, 0.05);
+            border-color: rgba(34, 163, 163, 0.3);
         }
 
-        #fit p {
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 17px;
-            line-height: 1.8;
-        }
-
-        /* ======================== BULLETS ======================== */
-        .bullets {
-            max-width: 750px;
-            margin: 40px auto 0;
-            list-style: none;
-        }
-
-        .bullets li {
-            padding: 12px 0 12px 35px;
-            position: relative;
-            font-size: 16px;
-            color: #f5f5dc;
-            line-height: 1.7;
-        }
-
-        .bullets li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
+        #problem .card h3 {
             color: #22a3a3;
-            font-weight: 700;
-            font-size: 20px;
         }
 
-        /* ======================== SERVICIOS ======================== */
-        #services {
-            background-color: rgba(34, 163, 163, 0.05);
+        #problem .card p {
+            color: #13005d;
         }
 
-        #offer {
-            background-color: #13005d;
+        #protocol {
+            background-color: #0a003d;
         }
 
-        .services-grid {
+        #protocol h2,
+        #protocol p {
+            color: #f5f5dc;
+        }
+
+        #protocol .card {
+            background-color: rgba(34, 163, 163, 0.1);
+            border-color: rgba(34, 163, 163, 0.3);
+        }
+
+        #protocol .card h3 {
+            color: #22a3a3;
+        }
+
+        #protocol .card p {
+            color: #f5f5dc;
+        }
+
+        /* ======================== PAQUETES ======================== */
+        #packages {
+            background-color: #fdf9f0;
+        }
+
+        #packages h2 {
+            color: #13005d;
+        }
+
+        .packages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
 
-        .service-block {
-            background-color: rgba(34, 163, 163, 0.08);
-            border-left: 4px solid #22a3a3;
-            padding: 35px;
-            border-radius: 2px;
+        .package-block {
+            background-color: #ffffff;
+            border: 2px solid rgba(34, 163, 163, 0.2);
+            padding: 40px 35px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        .service-block h3 {
+        .package-block:hover {
+            border-color: rgba(34, 163, 163, 0.4);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .package-mockup-wrap {
+            background-color: #f4eee4;
+            padding: 16px 16px 12px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .package-mockup {
+            display: block;
+            max-width: 100%;
+            width: 280px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 6px;
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+            transition: transform 0.3s ease;
+        }
+
+        .package-block:hover .package-mockup {
+            transform: scale(1.02);
+        }
+
+        .package-block h3 {
             color: #22a3a3;
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 12px;
+            margin-top: 0;
         }
 
-        .service-block p {
+        .package-subtitle {
             font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 15px;
+            color: #13005d;
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 1.5;
         }
 
-        .services-closing {
-            max-width: 750px;
-            margin: 50px auto 0;
-            padding-top: 30px;
-            border-top: 1px solid rgba(34, 163, 163, 0.2);
-            text-align: center;
+        .package-block ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .package-block li {
+            padding: 10px 0 10px 30px;
+            position: relative;
             font-size: 15px;
-            color: #b8a49d;
+            color: #13005d;
+            line-height: 1.6;
+        }
+
+        .package-block li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #22a3a3;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .package-closing {
+            font-size: 14px;
+            color: #0a0a0a;
+            padding-top: 20px;
+            border-top: 1px solid rgba(34, 163, 163, 0.15);
+            font-style: italic;
+            line-height: 1.6;
         }
 
         /* ======================== PASOS ======================== */
+        #process {
+            background-color: #0a003d;
+        }
+
+        #process h2 {
+            color: #f5f5dc;
+        }
+
         .steps {
             max-width: 800px;
             margin: 50px auto 0;
@@ -362,6 +431,7 @@
         .steps li h3 {
             margin-bottom: 10px;
             font-size: 18px;
+            color: #f5f5dc;
         }
 
         .steps li p {
@@ -369,104 +439,32 @@
             color: #f5f5dc;
         }
 
-        /* ======================== MÉTODO CLÍNICO ======================== */
-        #method {
-            background-color: rgba(34, 163, 163, 0.05);
+        /* ======================== ABOUT ======================== */
+        #about {
+            background-color: #fdf9f0;
         }
 
-        .method-intro {
-            max-width: 750px;
-            margin: 0 auto 50px;
-            text-align: center;
+        #about h2 {
+            color: #13005d;
+        }
+
+        #about .about-text {
+            color: #0a0a0a;
+        }
+
+        #about .about-text p {
+            color: #0a0a0a;
             font-size: 17px;
-            color: #f5f5dc;
-        }
-
-        .method-phases {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .phase {
-            background-color: rgba(34, 163, 163, 0.1);
-            border: 1px solid rgba(34, 163, 163, 0.2);
-            padding: 30px;
-            border-radius: 4px;
-        }
-
-        .phase h3 {
-            color: #ffd700;
-            margin-bottom: 12px;
-            font-size: 16px;
-        }
-
-        .phase p {
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        .method-closing {
-            max-width: 750px;
-            margin: 50px auto 0;
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(34, 163, 163, 0.2);
-            font-size: 15px;
-            color: #b8a49d;
-            font-style: italic;
-        }
-
-        /* ======================== SISTEMA CLÍNICO / TOOLKIT ======================== */
-        #toolkit {
-            background-color: rgba(34, 163, 163, 0.05);
-        }
-
-        /* ======================== MODELOS ======================== */
-        #models {
-            background-color: rgba(34, 163, 163, 0.05);
-        }
-
-        .models-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .model-block {
-            background-color: rgba(34, 163, 163, 0.08);
-            border: 1px solid rgba(34, 163, 163, 0.2);
-            padding: 35px;
-            border-radius: 4px;
-        }
-
-        .model-block h3 {
-            color: #22a3a3;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .model-block p {
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .models-closing {
-            max-width: 750px;
-            margin: 50px auto 0;
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(34, 163, 163, 0.2);
-            font-size: 15px;
-            color: #b8a49d;
+            line-height: 1.8;
         }
 
         /* ======================== TESTIMONIOS ======================== */
         #testimonials {
-            background-color: rgba(34, 163, 163, 0.05);
+            background-color: #13005d;
+        }
+
+        #testimonials h2 {
+            color: #f5f5dc;
         }
 
         .testimonials-grid {
@@ -500,7 +498,11 @@
 
         /* ======================== FAQ ======================== */
         #faq {
-            background-color: rgba(34, 163, 163, 0.05);
+            background-color: #fdf9f0;
+        }
+
+        #faq h2 {
+            color: #13005d;
         }
 
         .faq-container {
@@ -513,55 +515,106 @@
             background-color: rgba(34, 163, 163, 0.08);
             border: 1px solid rgba(34, 163, 163, 0.2);
             border-radius: 4px;
-            padding: 25px;
+            padding: 0;
+            overflow: hidden;
         }
 
         .faq-item h3 {
             color: #22a3a3;
-            margin-bottom: 12px;
+            margin-bottom: 0;
             font-size: 16px;
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            transition: background-color 0.3s;
+            user-select: none;
+        }
+
+        .faq-item h3:hover {
+            background-color: rgba(34, 163, 163, 0.15);
+        }
+
+        .faq-item h3:before {
+            margin-left: 16px;
+            width: 20px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+            color: #22a3a3;
+        }
+
+        .faq-item.open h3:before {
+            content: "−";
+        }
+
+        .faq-item:not(.open) h3:before {
+            content: "+";
         }
 
         .faq-item p {
+            display: none;
+            padding: 0 25px 25px 25px;
+            color: #13005d;
             font-size: 15px;
             line-height: 1.7;
-            color: #f5f5dc;
             margin-bottom: 0;
+        }
+
+        .faq-item.open p {
+            display: block;
+        }
+
+        .faq-item.open {
+            background-color: rgba(34, 163, 163, 0.12);
+            border-color: rgba(34, 163, 163, 0.3);
         }
 
         /* ======================== CTA FINAL ======================== */
         #final-cta {
-            background-color: rgba(34, 163, 163, 0.1);
-            text-align: center;
+            background-color: #0a003d;
         }
 
         #final-cta h2 {
             color: #ffd700;
-            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .final-text {
-            max-width: 700px;
+        .final-cta-text {
+            max-width: 750px;
             margin: 0 auto 40px;
+            text-align: center;
             font-size: 17px;
             line-height: 1.8;
             color: #f5f5dc;
         }
 
+        .final-cta-btn {
+            text-align: center;
+        }
+
         /* ======================== CONTACTO ======================== */
         #contact {
-            background-color: rgba(34, 163, 163, 0.05);
+            background-color: #fdf9f0;
             text-align: center;
+        }
+
+        #contact h2 {
+            color: #13005d;
         }
 
         .contact-info {
             max-width: 600px;
             margin: 0 auto;
             font-size: 15px;
+            color: #0a0a0a;
         }
 
         .contact-info p {
             margin-bottom: 12px;
+            color: #0a0a0a;
         }
 
         .contact-info a {
@@ -577,11 +630,15 @@
 
         /* ======================== FOOTER ======================== */
         footer {
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: #13005d;
             border-top: 1px solid rgba(34, 163, 163, 0.2);
             padding: 40px 0;
             text-align: center;
             font-size: 14px;
+            color: #b8a49d;
+        }
+
+        footer p {
             color: #b8a49d;
         }
 
@@ -629,9 +686,7 @@
             }
 
             .cards-grid,
-            .services-grid,
-            .method-phases,
-            .models-grid,
+            .packages-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
@@ -644,6 +699,10 @@
                 width: 60px;
                 height: 60px;
                 font-size: 24px;
+            }
+
+            .package-mockup {
+                width: 260px;
             }
         }
 
@@ -672,6 +731,24 @@
                 padding: 12px 24px;
                 font-size: 12px;
             }
+
+            .faq-item h3 {
+                padding: 20px;
+                font-size: 15px;
+            }
+
+            .faq-item p {
+                padding: 0 20px 20px 20px;
+            }
+
+            .package-block {
+                padding: 30px 20px;
+            }
+
+            .package-mockup {
+                width: 220px;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -679,342 +756,175 @@
     <!-- NAVEGACIÓN -->
     <nav>
         <div class="nav-container">
-            <a href="#hero" class="logo">Dr. Jonathan Chávez</a>
+            <a href="#hero" class="logo">Dr. Jonathan Chávez S.</a>
             <ul class="nav-links">
                 <li><a href="#hero">Inicio</a></li>
-                <li><a href="#benefits">Beneficios</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#method">Método</a></li>
+                <li><a href="#problem">El problema</a></li>
+                <li><a href="#protocol">Protocolo HOPE</a></li>
+                <li><a href="#packages">Paquetes</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- 1. HERO -->
     <section id="hero">
         <div class="container">
-            <div class="hero-logo">Médico Psicodélico y Funcional</div>
-            <h1>Reduce el riesgo clínico y reputacional de tu centro de psilocibina</h1>
+            <div class="hero-logo">Protocolo de Cribado para Centros de Psilocibina</div>
+            <h1>Tu centro no puede seguir decidiendo a quién admite solo por intuición</h1>
             <p class="hero-subtitle">
-                Acompaño a tu centro como médico externo, ayudando a decidir quién es apto, cómo actuar ante eventos clínicos y cómo documentar cada decisión. Para que no tengas que tomar decisiones críticas en soledad.
+                Te ayudo a diseñar e implementar un Protocolo de Cribado y Manejo de Riesgos para sesiones con psilocibina, para que sepas a quién admitir, a quién no y cómo documentar cada decisión.
             </p>
+
+            <div class="hero-cta-wrapper">
+                <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
+            </div>
 
             <ul class="objections">
-                <li>No imposición de marca</li>
-                <li>No protocolos genéricos desconectados de tu realidad</li>
-                <li>No trabajo médico improvisado</li>
-                <li>No decisiones clínicas en soledad</li>
-            </ul>
-
-            <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
-        </div>
-    </section>
-
-    <!-- BENEFICIOS CLAVE -->
-    <section id="benefits">
-        <div class="container">
-            <h2>Lo que gana tu centro al trabajar conmigo</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Seguridad clínica</h3>
-                    <p>Evaluaciones médicas estructuradas, criterios de aptitud claros y reducción del riesgo físico y farmacológico en cada sesión.</p>
-                </div>
-                <div class="card">
-                    <h3>Claridad y documentación</h3>
-                    <p>Informes clínicos comprensibles, criterios explícitos de decisión y registros que respaldan la práctica ética de tu centro.</p>
-                </div>
-                <div class="card">
-                    <h3>Colaboración sencilla</h3>
-                    <p>Me integro al equipo como médico externo, respetando roles, tiempos y protocolos internos, para facilitar el trabajo, no complicarlo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ¿ES ESTO PARA TU CENTRO? -->
-    <section id="fit">
-        <div class="container">
-            <h2>¿Es esto para tu centro?</h2>
-            <p>
-                Este trabajo es para centros que ya acompañan procesos con psilocibina y quieren dejar de decidir solo por intuición en momentos clínicamente sensibles.
-            </p>
-            <ul class="bullets">
-                <li>No tienes criterios escritos de idoneidad y exclusión para participantes.</li>
-                <li>Tu equipo responde distinto ante situaciones similares y eso genera inseguridad.</li>
-                <li>No cuentas con documentación clínica sólida si alguien pide explicaciones.</li>
+                <li>No más decisiones clínicas en soledad</li>
+                <li>No más criterios "implícitos" que varían cada semana</li>
+                <li>No más improvisar ante casos límite</li>
+                <li>No más documentación débil ante posibles preguntas</li>
             </ul>
         </div>
     </section>
 
-    <!-- RIESGOS QUE AYUDO A MITIGAR -->
-    <section id="risks">
+    <!-- 2. EL PROBLEMA QUE RESUELVO -->
+    <section id="problem">
         <div class="container">
-            <h2>Riesgos que ayudo a mitigar</h2>
+            <h2>El problema que resuelvo en tu centro</h2>
             <p>
-                El renacimiento psicodélico trae oportunidades, pero también una responsabilidad real. Muchos centros tienen
-                buena intención, pero protocolos débiles. Mi rol es ayudarte a cerrar esa brecha.
+                Muchos centros tienen buena intención pero protocolos débiles. Hoy admiten participantes sin criterios claros, confunden crisis médica con proceso espiritual, y casi no documentan decisiones. Eso genera riesgo clínico y reputacional.
             </p>
             <div class="cards-grid">
                 <div class="card">
-                    <h3>Selección inadecuada de participantes</h3>
+                    <h3>Admisión sin criterios escritos</h3>
                     <p>
-                        Evitamos admitir personas con contraindicaciones médicas o psiquiátricas claras, y definimos criterios
-                        de exclusión y de "apto con condiciones" que tu equipo pueda aplicar sin improvisar.
+                        Cada facilitador decide diferente. No hay exclusión clara, ni categorización de riesgos relativos. El resultado: inconsistencia y expositura legal.
                     </p>
                 </div>
                 <div class="card">
-                    <h3>Confundir crisis médica con "proceso espiritual"</h3>
+                    <h3>Confundir crisis médica con experiencia difícil</h3>
                     <p>
-                        Ayudo a tu equipo a distinguir signos de alarma física de una experiencia difícil, y a tener claro
-                        cuándo contener en sala y cuándo activar la cadena de emergencia.
+                        Sin capacitación clínica, tu equipo no distingue signos de alarma física. Pueden contener en sala lo que debería ser derivación urgente.
                     </p>
                 </div>
                 <div class="card">
-                    <h3>Documentación débil ante posibles reclamaciones</h3>
+                    <h3>Documentación insuficiente si alguien pide explicaciones</h3>
                     <p>
-                        Diseñamos una historia clínica mínima viable, consentimiento informado y registros de sesión que dejan
-                        claro qué sabían, qué decidieron y por qué, protegiendo a participantes y facilitadores.
+                        Sin historia clínica, consentimiento informado y registros de decisión, no puedes defenderte. La improvisación deja pistas débiles.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOBRE MÍ -->
-    <section id="about">
+    <!-- 3. PROTOCOLO DE CRIBADO HOPE -->
+    <section id="protocol">
         <div class="container">
-            <h2>Sobre el Dr. Jonathan Chávez</h2>
-            <div class="about-text">
-                <p>Soy médico general y funcional, con formación en ciencia y medicina psicodélica. Acompaño procesos terapéuticos profundos desde la medicina, poniendo especial foco en seguridad, fisiología y hábitos de vida.</p>
-                <p>Mi rol es ofrecer criterio clínico, estructura y respaldo médico a los centros que trabajan con psilocibina, siempre dentro del marco legal y respetando la autonomía de cada equipo terapéutico.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- MI ROL MÉDICO -->
-    <section id="my-role">
-        <div class="container">
-            <h2>Mi rol médico dentro del equipo terapéutico</h2>
-            <p class="role-intro">No soy el facilitador ni el terapeuta principal. Soy el médico que sostiene la seguridad clínica del proceso.</p>
-
-            <ul class="bullets">
-                <li>Evalúo la salud física, la medicación y los riesgos médicos de los participantes.</li>
-                <li>Propongo ajustes prudentes cuando es necesario, siempre documentados.</li>
-                <li>Acompaño al equipo en decisiones críticas antes, durante y después de la sesión.</li>
-                <li>Respeto los límites de mi rol y la estructura del centro.</li>
-                <li>Trabajo con absoluta confidencialidad y ética profesional.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- SERVICIOS PROFESIONALES -->
-    <section id="services">
-        <div class="container">
-            <h2>Servicios profesionales para centros que usan psilocibina</h2>
-            <div class="services-grid">
-                <div class="service-block">
-                    <h3>Evaluación médica y screening clínico</h3>
-                    <p>Historia clínica específica para contextos psicodélicos, revisión de medicación y criterios de exclusión claros para tomar decisiones fundadas sobre aptitud.</p>
-                </div>
-                <div class="service-block">
-                    <h3>Preparación fisiológica y optimización de hábitos</h3>
-                    <p>Recomendaciones médicas sobre sueño, nutrición, manejo del estrés y, cuando aplica, ajuste gradual de medicación dentro del marco legal de cada país.</p>
-                </div>
-                <div class="service-block">
-                    <h3>Soporte médico remoto durante la sesión</h3>
-                    <p>Disponibilidad por llamada o videollamada para apoyar decisiones de seguridad, manejo inicial de eventos físicos y criterios de escalamiento.</p>
-                </div>
-                <div class="service-block">
-                    <h3>Integración médica y seguimiento</h3>
-                    <p>Revisión post-sesión de síntomas físicos, sueño, energía y marcadores relevantes, con recomendaciones claras para sostener los cambios en el tiempo.</p>
-                </div>
-            </div>
-            <p class="services-closing">Cada servicio incluye documentación clínica que respalda las decisiones del equipo y fortalece el marco ético del centro.</p>
-        </div>
-    </section>
-
-    <!-- QUÉ INCLUYE TRABAJAR CONMIGO -->
-    <section id="offer">
-        <div class="container">
-            <h2>Qué incluye trabajar conmigo</h2>
-            <div class="services-grid">
-                <div class="service-block">
-                    <h3>1. Criterio clínico aplicado a tus casos reales</h3>
+            <h2>Qué es el Protocolo de Cribado HOPE</h2>
+            <p style="text-align: center; max-width: 750px; margin: 0 auto 50px;">
+                Un sistema estructurado en 3 componentes que trabajan juntos para tomar decisiones de admisión más seguras, documentadas y aplicables a tu realidad.
+            </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Guía de exclusión y manejo de riesgos</h3>
                     <p>
-                        Revisamos casos reales de tu centro. Realizo screening médico, emito informes de aptitud y ofrezco recomendaciones
-                        claras para que tu equipo tome decisiones con más seguridad, menos miedo y sin caer en negligencia por omisión.
+                        Define exclusión absoluta ("NO rotundo"), factores de riesgo relativos ("proceder con ajustes") y procedimiento básico de documentación y derivación. Es tu árbol de decisión clínico.
                     </p>
                 </div>
-                <div class="service-block">
-                    <h3>2. Sistema mínimo viable de seguridad y documentación</h3>
+                <div class="card">
+                    <h3>Modelo extrafarmacológico y rasgos de personalidad</h3>
                     <p>
-                        Trabajamos con plantillas de anamnesis, criterios de idoneidad, hojas de sesión, cierre emocional, afterglow e integración. Todo adaptado a la realidad de tu centro y con una licencia de uso interno mientras dure nuestra colaboración.
+                        Añade predictores: absorción, apertura, optimismo, neuroticismo, regulación emocional. Te permite ajustar preparación y setting según el perfil del participante.
                     </p>
                 </div>
-                <div class="service-block">
-                    <h3>3. Acompañamiento en la implementación</h3>
+                <div class="card">
+                    <h3>Evaluación médica y psicológica especializada</h3>
                     <p>
-                        Durante las primeras semanas revisamos juntos la puesta en marcha, afinamos procesos y resolvemos dudas clínicas. El objetivo
-                        es que tu sistema funcione en el día a día, incluso cuando yo no esté en la sala.
+                        Indica cuándo entran médico, psicólogo clínico o psiquiatra. Incluye criterios de escalas, labs básicos, interconsulta y límites profesionales claros.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CÓMO COLABORO CON TU CENTRO -->
-    <section id="together">
+    <!-- 4. PAQUETES DE IMPLEMENTACIÓN -->
+    <section id="packages">
         <div class="container">
-            <h2>Cómo colaboro con tu centro</h2>
+            <h2>Paquetes de implementación</h2>
+            <div class="packages-grid">
+                <div class="package-block">
+                    <div class="package-mockup-wrap">
+                        <img src="imag/cribado-mockup.png" alt="Mockup Protocolo de Cribado Esencial" class="package-mockup">
+                    </div>
+                    <h3>Protocolo de Cribado Esencial</h3>
+                    <p class="package-subtitle">En 10 días tienes un cribado mínimo viable funcionando con tu próximo grupo.</p>
+                    <ul>
+                        <li>Definimos criterios de exclusión absoluta y "apto con condiciones" según tu tipo de centro.</li>
+                        <li>Diseñamos y adaptamos tu formulario de screening para psilocibina.</li>
+                        <li>Creas un árbol de decisión simple: Apto / Apto con condiciones / No apto.</li>
+                        <li>Estableces cómo documentar cada decisión en historia clínica para proteger a tu equipo.</li>
+                        <li>2–3 horas de trabajo 1:1 centradas en tus casos reales.</li>
+                    </ul>
+                    <p class="package-closing">
+                        Pensado para centros que quieren dejar de improvisar admisiones, sin meterse todavía en evaluaciones complejas.
+                    </p>
+                </div>
+                <div class="package-block">
+                    <div class="package-mockup-wrap">
+                        <img src="imag/cribado-predictores-mockup.png" alt="Mockup Sistema Completo de Riesgos y Predictores" class="package-mockup">
+                    </div>
+                    <h3>Sistema Completo de Riesgos y Predictores</h3>
+                    <p class="package-subtitle">En 30 días pasas de no tener sistema a un protocolo completo de cribado, predictores y documentación.</p>
+                    <ul>
+                        <li>Incluye todo lo del Protocolo de Cribado Esencial.</li>
+                        <li>Implementamos la evaluación de rasgos y factores extrafarmacológicos (absorción, apertura, optimismo, neuroticismo, regulación emocional).</li>
+                        <li>Adaptamos una historia clínica mínima viable para contextos con psilocibina.</li>
+                        <li>Trabajamos sobre tu consentimiento informado específico para estas intervenciones.</li>
+                        <li>Definimos lineamientos básicos de botiquín y manejo inicial de eventos agudos.</li>
+                        <li>Te ayudo a decidir cuándo derivar a evaluación médica / psiquiátrica especializada.</li>
+                        <li>4 horas de trabajo 1:1, aplicadas a tus casos y materiales reales.</li>
+                    </ul>
+                    <p class="package-closing">
+                        Pensado para centros con volumen estable que quieren escalar con más rigor clínico y menos improvisación.
+                    </p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/593989760520" class="btn">Pedir una llamada clínica</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CÓMO TRABAJAMOS -->
+    <section id="process">
+        <div class="container">
+            <h2>Cómo trabajamos: Proceso en 3 pasos</h2>
             <ol class="steps">
                 <li data-step="1">
-                    <h3>Semana 1 · Conversemos sobre tu centro</h3>
-                    <p>Me cuentas cómo trabajan hoy, qué tipo de procesos ofrecen y qué necesitan del área médica.</p>
+                    <h3>Llamada clínica inicial</h3>
+                    <p>Entiendo cómo funciona tu centro, qué país, volumen de participantes, tipo de casos y dónde sientes más inseguridad en cribado. Definimos si es Paquete Esencial o Sistema Completo.</p>
                 </li>
                 <li data-step="2">
-                    <h3>Semana 1–2 · Definimos el alcance clínico</h3>
-                    <p>Acordamos si empezar por screening, soporte en sesiones, integración o una combinación de estos.</p>
+                    <h3>Adaptación del protocolo a tu realidad</h3>
+                    <p>Diseñamos juntos los criterios, formularios y árbol de decisión específico para tu centro. Todo basado en tus casos reales, no en genéricos.</p>
                 </li>
                 <li data-step="3">
-                    <h3>Semanas 2–4 · Evaluación de participantes</h3>
-                    <p>Atiendo a los candidatos, emito decisiones de aptitud e informes claros para tu equipo.</p>
-                </li>
-                <li data-step="4">
-                    <h3>Sesiones clave · Acompañamiento durante las experiencias</h3>
-                    <p>Si lo requieren, estoy disponible en la ventana de sesión para apoyar al equipo ante eventos clínicos.</p>
-                </li>
-                <li data-step="5">
-                    <h3>Semanas 4–8 · Integración médica y mejora continua</h3>
-                    <p>Doy seguimiento post-sesión y, si la colaboración es estable, revisamos y mejoramos juntos los protocolos médicos.</p>
+                    <h3>Implementación y revisión final</h3>
+                    <p>Aplicamos el sistema con tus primeros casos, refinamos protocolos sobre la marcha y aseguramos que tu equipo pueda operar de forma independiente después.</p>
                 </li>
             </ol>
         </div>
     </section>
 
-    <!-- MÉTODO CLÍNICO -->
-    <section id="method">
+    <!-- 6. SOBRE MÍ -->
+    <section id="about">
         <div class="container">
-            <h2>Mi método clínico: Mountain Method</h2>
-            <p class="method-intro">Trabajo con un marco clínico propio, inspirado en la literatura científica y la práctica integrativa. Es simple de entender y fácil de integrar a tus protocolos.</p>
-
-            <div class="method-phases">
-                <div class="phase">
-                    <h3>Fase 1 · Evaluación</h3>
-                    <p>Historia clínica específica, criterios de exclusión y análisis de medicación y condiciones médicas relevantes.</p>
-                </div>
-                <div class="phase">
-                    <h3>Fase 2 · Preparación</h3>
-                    <p>Ajustes fisiológicos y de hábitos que ayudan al participante a llegar mejor preparado a la experiencia.</p>
-                </div>
-                <div class="phase">
-                    <h3>Fase 3 · Acompañamiento</h3>
-                    <p>Soporte médico remoto para ayudar al equipo a decidir cómo actuar ante eventos físicos o cambios relevantes.</p>
-                </div>
-                <div class="phase">
-                    <h3>Fase 4 · Integración</h3>
-                    <p>Consultas médicas de seguimiento para cuidar el cuerpo y traducir la experiencia en cambios sostenibles de salud.</p>
-                </div>
-            </div>
-
-            <p class="method-closing">
-                Este marco clínico se adapta a la realidad de cada centro y se integra sobre tus protocolos existentes, sin imponer una forma única de trabajar.
-            </p>
-        </div>
-    </section>
-
-    <!-- SISTEMA CLÍNICO / TOOLKIT -->
-    <section id="toolkit">
-        <div class="container">
-            <h2>El sistema clínico que pongo a tu disposición</h2>
-            <p class="method-intro">
-                No trabajo a ciegas. Uso un conjunto de herramientas clínicas diseñadas para contextos con psilocibina. 
-                Este sistema puede aplicarse directamente por mí o enseñarse a tu equipo para que lo integre en su práctica.
-            </p>
-
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Anamnesis psicodélica estructurada</h3>
-                    <p>
-                        Historia clínica específica que ordena datos médicos, antecedentes, contexto y estilo de vida para tomar decisiones claras de aptitud.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Protocolo de idoneidad y riesgos</h3>
-                    <p>
-                        Criterios de exclusión y de riesgo relativo, con decisiones documentadas: Apto / Apto con condiciones / No apto.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Historia clínica en 4 fases</h3>
-                    <p>
-                        Registro antes, durante y después de la sesión, incluyendo observaciones de la experiencia y evolución física en integración.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Hoja de ruta e integración HOPE</h3>
-                    <p>
-                        Plantillas para organizar objetivos, narrativa, afterglow y plan de acción, traduciendo insights en cambios medibles.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Sistema OAV y perfil de experiencia</h3>
-                    <p>
-                        Escalas y perfiles para entender mejor lo vivido, ajustar la integración y fortalecer el rigor de tus programas.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Seguridad clínica y emergencias</h3>
-                    <p>
-                        Lineamientos para manejo de eventos agudos, primeras 72 horas, códigos de seguridad del espacio y criterios de derivación médica.
-                    </p>
-                </div>
-            </div>
-
-            <p class="method-closing">
-                Estas herramientas forman un sistema coherente que puede usarse como soporte médico externo o como base para fortalecer la práctica clínica de tu equipo.
-            </p>
-        </div>
-    </section>
-
-    <!-- FORMAS DE TRABAJAR CONMIGO -->
-    <section id="models">
-        <div class="container">
-            <h2>Formas de trabajar conmigo</h2>
-            <div class="models-grid">
-                <div class="model-block">
-                    <h3>Servicios clínicos para tus participantes</h3>
-                    <p>
-                        Ideal si necesitas un médico que acompañe a tu centro desde fuera. Me encargo de la parte clínica: evaluación de
-                        idoneidad, preparación fisiológica básica, soporte remoto durante las sesiones e integración médica posterior. Actúo como figura clínica de referencia, sin interferir con la visión terapéutica del proyecto.
-                    </p>
-                    <ul class="bullets">
-                        <li>Cuando tu centro no cuenta con médico propio o su agenda está saturada.</li>
-                        <li>Cuando tienes casos complejos y quieres respaldo clínico específico para psilocibina.</li>
-                        <li>Cuando necesitas apoyo inmediato mientras defines tu protocolo interno.</li>
-                    </ul>
-                </div>
-                <div class="model-block">
-                    <h3>Mentoría y formación para tu equipo</h3>
-                    <p>
-                        Si ya tienes un volumen estable de participantes y quieres que tu equipo gane autonomía clínica,
-                        podemos trabajar en formato mentoría. Te enseño a utilizar el sistema clínico para que tu centro
-                        construya estructura y criterios propios sin perder su estilo.
-                    </p>
-                    <ul class="bullets">
-                        <li>Cuando ya realizas retiros o sesiones de forma regular y quieres dejar de improvisar.</li>
-                        <li>Cuando deseas procesos claros para documentar cada decisión importante.</li>
-                        <li>Cuando buscas escalar tu centro manteniendo seguridad, ética y coherencia clínica.</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="models-closing">
-                En ambos casos, diseñamos un acuerdo a medida según la realidad de tu centro y la regulación de tu país.
-                Podemos empezar con un piloto clínico, una mentoría breve o una combinación de ambos. Si después del primer
-                mes de trabajo no percibes más claridad y estructura en tu práctica, podemos pausar la colaboración; te
-                quedas con todo lo ya implementado.
-            </p>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="https://wa.me/593989760520" class="btn">Agendar una llamada clínica</a>
+            <h2>Sobre el Dr. Jonathan Chávez</h2>
+            <div class="about-text">
+                <p>Soy médico general y funcional, con formación en ciencia y medicina psicodélica. Me especializo en seguridad clínica, cribado estructurado y documentación en contextos con psilocibina.</p>
+                <p>Mi objetivo es que centros como el tuyo pasen de improvisar a tener un protocolo claro, documentado y aplicable, sin que eso signifique perder su identidad terapéutica.</p>
             </div>
         </div>
     </section>
@@ -1022,18 +932,18 @@
     <!-- TESTIMONIOS -->
     <section id="testimonials">
         <div class="container">
-            <h2>Lo que otros profesionales destacan de mi trabajo</h2>
+            <h2>Lo que destacan de mi trabajo</h2>
             <div class="testimonials-grid">
                 <div class="testimonial">
-                    <p>"Muy satisfecho de conocer a un profesional médico experto y sumergido en el tema de la psilocibina. No deja ningún aspecto de la salud de lado y cubre los protocolos de seguridad, desde el rescate farmacológico hasta el consentimiento informado. Ético, humano y muy comprometido con el paciente."</p>
+                    <p>"Muy satisfecho de conocer a un profesional médico experto en psilocibina. Cubre protocolos de seguridad desde el consentimiento informado hasta documentación clínica. Ético, humano y comprometido."</p>
                     <p>— Sergio Armando Salazar Arriola, Médico</p>
                 </div>
                 <div class="testimonial">
-                    <p>"La experiencia con Jonathan ha sido muy profesional, aportando bases en estudios y experiencia. Sus recomendaciones han dado valor a nuestro protocolo, reforzando puntos sobre riesgos y factores de exclusión. La información ha sido extremadamente útil y clara."</p>
+                    <p>"Su experiencia basada en estudios fue invaluable. Las recomendaciones reforzaron nuestro protocolo de riesgos y criterios de exclusión. Información útil y aplicable a nuestra realidad."</p>
                     <p>— James Emerson Mazariegos, Director de centro psicodélico</p>
                 </div>
                 <div class="testimonial">
-                    <p>"La atención de Jonathan es absoluta. Su capacidad como médico y su pasión por la medicina psicodélica lo convierten en la referencia a la que recurriré siempre que mis clientes lo necesiten. Es de los pocos médicos funcionales en español con información actualizada, útil y aplicable."</p>
+                    <p>"Jonathan es mi referencia médica para clientes que necesitan respaldo. Uno de pocos médicos funcionales en español con información actualizada, ética y aplicable a psilocibina."</p>
                     <p>— Montserrat Morán Zebadúa, Health Coach</p>
                 </div>
             </div>
@@ -1046,43 +956,43 @@
             <h2>Preguntas frecuentes</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <h3>¿Es obligatorio que un centro tenga apoyo médico?</h3>
-                    <p>Depende de la regulación de cada país y del tipo de intervención. Más allá de lo legal, tener criterio clínico externo reduce riesgos y mejora la calidad de las decisiones del equipo.</p>
+                    <h3>¿Puedo aplicar esto si mi centro no tiene médico interno?</h3>
+                    <p>Sí. De hecho, muchos centros sin médico de planta necesitan esto más. El protocolo está diseñado para que tu equipo no médico pueda aplicar screening claro y escalar cuando sea necesario.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>¿Trabajas de forma presencial o solo remota?</h3>
-                    <p>Vivo en Ecuador y puedo trabajar de forma presencial en contextos específicos dentro del país. Para centros en otros países, colaboro de forma remota como apoyo clínico externo.</p>
+                    <h3>¿Se adapta al marco legal de mi país?</h3>
+                    <p>Sí. El protocolo es un estándar de buenas prácticas clínicas aplicable en contextos regulados. En la llamada inicial discutimos tu país y ajustamos documentación y criterios a lo que funciona localmente.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Trabajas de forma presencial o remota?</h3>
+                    <p>Vivo en Ecuador y puedo trabajar presencialmente en contextos específicos dentro del país. Para centros en otros países, colaboro de forma remota como apoyo clínico externo.</p>
                 </div>
                 <div class="faq-item">
                     <h3>¿Interfieres en el rol del terapeuta o facilitador?</h3>
-                    <p>No. Mi rol se limita a la parte médica: evaluación de riesgos, soporte clínico y seguimiento físico. Respeto la metodología terapéutica de cada centro.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>¿Das consejos sobre el uso de sustancias o dosis?</h3>
-                    <p>No asesoro sobre acceso ni uso de sustancias. Mi trabajo se centra en la evaluación médica, la seguridad y el acompañamiento clínico en contextos donde el centro ya trabaja dentro de un marco regulado.</p>
+                    <p>No. Mi rol se limita a cribado, documentación y criterios de seguridad clínica. Respeto la metodología terapéutica de tu centro.</p>
                 </div>
                 <div class="faq-item">
                     <h3>¿Tu trabajo reemplaza asesoría legal o seguros?</h3>
-                    <p>
-                        No. Mi rol es clínico. Te ayudo a mejorar el screening, los protocolos de seguridad y la documentación
-                        médica, de forma alineada con buenas prácticas internacionales. Las decisiones legales, de seguros o
-                        de estructura societaria deben revisarse siempre con abogados y asesores locales.
-                    </p>
+                    <p>No. Mi rol es clínico. Te ayudo a mejorar screening, documentación y seguridad médica. Decisiones legales y de seguros deben revisarse siempre con abogados locales.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué pasa si después del primer mes no veo cambios?</h3>
+                    <p>Si después del primer mes no percibes más claridad y estructura en tu screening y documentación, podemos pausar; te quedas con todo lo implementado hasta ese momento.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LLAMADO FINAL A LA ACCIÓN -->
+    <!-- CTA FINAL -->
     <section id="final-cta">
         <div class="container">
-            <h2>Hablemos sobre tu centro y su marco clínico</h2>
-            <p class="final-text">
-                Si diriges un centro o retiro y quieres trabajar con más seguridad, claridad y estructura clínica, podemos diseñar una
-                colaboración a medida. Revisamos tu situación actual y definimos juntos el siguiente paso: servicios médicos para tus
-                participantes, mentoría para tu equipo o una combinación de ambos, para que tu centro crezca sin sentir que caminas al borde del abismo clínico y reputacional.
+            <h2>Hablemos sobre tu cribado</h2>
+            <p class="final-cta-text">
+                Si quieres revisar el cribado y el marco de riesgos de tu centro, escríbeme y vemos si tiene sentido empezar por el Protocolo de Cribado Esencial o el Sistema Completo.
             </p>
-            <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
+            <div class="final-cta-btn">
+                <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
+            </div>
         </div>
     </section>
 
@@ -1104,9 +1014,20 @@
             <p>Sígueme en:</p>
             <div class="social-links">
                 <a href="https://www.youtube.com/@doctorhopeec." target="_blank" rel="noopener noreferrer">YouTube</a>
-                <a href="https://www.linkedin.com/in/doctorhope/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/drhopeec/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/drhopeec/" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Acordeón para FAQ
+        document.querySelectorAll('#faq .faq-item h3').forEach(heading => {
+            heading.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 </html>
