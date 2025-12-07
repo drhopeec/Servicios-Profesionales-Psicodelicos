@@ -236,9 +236,13 @@
             line-height: 1.7;
         }
 
-        /* ======================== SECCIONES SOBRE MÍ ======================== */
+        /* ======================== SECCIONES GENERALES ======================== */
         #about {
             background-color: rgba(34, 163, 163, 0.05);
+        }
+
+        #fit {
+            background-color: #13005d;
         }
 
         .about-text {
@@ -247,6 +251,14 @@
             font-size: 17px;
             line-height: 1.8;
             color: #f5f5dc;
+        }
+
+        #fit p {
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 17px;
+            line-height: 1.8;
         }
 
         /* ======================== BULLETS ======================== */
@@ -278,6 +290,10 @@
             background-color: rgba(34, 163, 163, 0.05);
         }
 
+        #offer {
+            background-color: #13005d;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -300,6 +316,7 @@
         .service-block p {
             font-size: 15px;
             line-height: 1.7;
+            margin-bottom: 15px;
         }
 
         .services-closing {
@@ -406,14 +423,6 @@
             background-color: rgba(34, 163, 163, 0.05);
         }
 
-        .toolkit-intro {
-            max-width: 750px;
-            margin: 0 auto 50px;
-            text-align: center;
-            font-size: 17px;
-            color: #f5f5dc;
-        }
-
         /* ======================== MODELOS ======================== */
         #models {
             background-color: rgba(34, 163, 163, 0.05);
@@ -442,6 +451,7 @@
         .model-block p {
             font-size: 15px;
             line-height: 1.7;
+            margin-bottom: 15px;
         }
 
         .models-closing {
@@ -684,12 +694,14 @@
     <section id="hero">
         <div class="container">
             <div class="hero-logo">Médico Psicodélico y Funcional</div>
-            <h1>Respaldo médico clínico para centros que usan psilocibina</h1>
-            <p class="hero-subtitle">Acompaño a tu centro con criterio médico, seguridad clínica y documentación clara, ya sea como soporte médico externo o formando a tu equipo en un sistema clínico replicable para trabajar con psilocibina.</p>
+            <h1>Reduce el riesgo clínico y reputacional de tu centro de psilocibina</h1>
+            <p class="hero-subtitle">
+                Acompaño a tu centro como médico externo, ayudando a decidir quién es apto, cómo actuar ante eventos clínicos y cómo documentar cada decisión. Para que no tengas que tomar decisiones críticas en soledad.
+            </p>
 
             <ul class="objections">
                 <li>No imposición de marca</li>
-                <li>No protocolos genéricos</li>
+                <li>No protocolos genéricos desconectados de tu realidad</li>
                 <li>No trabajo médico improvisado</li>
                 <li>No decisiones clínicas en soledad</li>
             </ul>
@@ -714,6 +726,55 @@
                 <div class="card">
                     <h3>Colaboración sencilla</h3>
                     <p>Me integro al equipo como médico externo, respetando roles, tiempos y protocolos internos, para facilitar el trabajo, no complicarlo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿ES ESTO PARA TU CENTRO? -->
+    <section id="fit">
+        <div class="container">
+            <h2>¿Es esto para tu centro?</h2>
+            <p>
+                Este trabajo es para centros que ya acompañan procesos con psilocibina y quieren dejar de decidir solo por intuición en momentos clínicamente sensibles.
+            </p>
+            <ul class="bullets">
+                <li>No tienes criterios escritos de idoneidad y exclusión para participantes.</li>
+                <li>Tu equipo responde distinto ante situaciones similares y eso genera inseguridad.</li>
+                <li>No cuentas con documentación clínica sólida si alguien pide explicaciones.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- RIESGOS QUE AYUDO A MITIGAR -->
+    <section id="risks">
+        <div class="container">
+            <h2>Riesgos que ayudo a mitigar</h2>
+            <p>
+                El renacimiento psicodélico trae oportunidades, pero también una responsabilidad real. Muchos centros tienen
+                buena intención, pero protocolos débiles. Mi rol es ayudarte a cerrar esa brecha.
+            </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Selección inadecuada de participantes</h3>
+                    <p>
+                        Evitamos admitir personas con contraindicaciones médicas o psiquiátricas claras, y definimos criterios
+                        de exclusión y de "apto con condiciones" que tu equipo pueda aplicar sin improvisar.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Confundir crisis médica con "proceso espiritual"</h3>
+                    <p>
+                        Ayudo a tu equipo a distinguir signos de alarma física de una experiencia difícil, y a tener claro
+                        cuándo contener en sala y cuándo activar la cadena de emergencia.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Documentación débil ante posibles reclamaciones</h3>
+                    <p>
+                        Diseñamos una historia clínica mínima viable, consentimiento informado y registros de sesión que dejan
+                        claro qué sabían, qué decidieron y por qué, protegiendo a participantes y facilitadores.
+                    </p>
                 </div>
             </div>
         </div>
@@ -753,7 +814,7 @@
             <div class="services-grid">
                 <div class="service-block">
                     <h3>Evaluación médica y screening clínico</h3>
-                    <p>Historia clínica específica para contextos psicodélicos, revisión de medicación, criterios de exclusión y decisión clara: apto, apto con condiciones o no apto.</p>
+                    <p>Historia clínica específica para contextos psicodélicos, revisión de medicación y criterios de exclusión claros para tomar decisiones fundadas sobre aptitud.</p>
                 </div>
                 <div class="service-block">
                     <h3>Preparación fisiológica y optimización de hábitos</h3>
@@ -772,29 +833,58 @@
         </div>
     </section>
 
-    <!-- CÓMO TRABAJAMOS JUNTOS -->
+    <!-- QUÉ INCLUYE TRABAJAR CONMIGO -->
+    <section id="offer">
+        <div class="container">
+            <h2>Qué incluye trabajar conmigo</h2>
+            <div class="services-grid">
+                <div class="service-block">
+                    <h3>1. Criterio clínico aplicado a tus casos reales</h3>
+                    <p>
+                        Revisamos casos reales de tu centro. Realizo screening médico, emito informes de aptitud y ofrezco recomendaciones
+                        claras para que tu equipo tome decisiones con más seguridad, menos miedo y sin caer en negligencia por omisión.
+                    </p>
+                </div>
+                <div class="service-block">
+                    <h3>2. Sistema mínimo viable de seguridad y documentación</h3>
+                    <p>
+                        Trabajamos con plantillas de anamnesis, criterios de idoneidad, hojas de sesión, cierre emocional, afterglow e integración. Todo adaptado a la realidad de tu centro y con una licencia de uso interno mientras dure nuestra colaboración.
+                    </p>
+                </div>
+                <div class="service-block">
+                    <h3>3. Acompañamiento en la implementación</h3>
+                    <p>
+                        Durante las primeras semanas revisamos juntos la puesta en marcha, afinamos procesos y resolvemos dudas clínicas. El objetivo
+                        es que tu sistema funcione en el día a día, incluso cuando yo no esté en la sala.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO COLABORO CON TU CENTRO -->
     <section id="together">
         <div class="container">
             <h2>Cómo colaboro con tu centro</h2>
             <ol class="steps">
                 <li data-step="1">
-                    <h3>Conversemos sobre tu centro</h3>
+                    <h3>Semana 1 · Conversemos sobre tu centro</h3>
                     <p>Me cuentas cómo trabajan hoy, qué tipo de procesos ofrecen y qué necesitan del área médica.</p>
                 </li>
                 <li data-step="2">
-                    <h3>Definimos el alcance clínico</h3>
+                    <h3>Semana 1–2 · Definimos el alcance clínico</h3>
                     <p>Acordamos si empezar por screening, soporte en sesiones, integración o una combinación de estos.</p>
                 </li>
                 <li data-step="3">
-                    <h3>Evaluación de participantes</h3>
+                    <h3>Semanas 2–4 · Evaluación de participantes</h3>
                     <p>Atiendo a los candidatos, emito decisiones de aptitud e informes claros para tu equipo.</p>
                 </li>
                 <li data-step="4">
-                    <h3>Acompañamiento durante las experiencias</h3>
+                    <h3>Sesiones clave · Acompañamiento durante las experiencias</h3>
                     <p>Si lo requieren, estoy disponible en la ventana de sesión para apoyar al equipo ante eventos clínicos.</p>
                 </li>
                 <li data-step="5">
-                    <h3>Integración médica y mejora continua</h3>
+                    <h3>Semanas 4–8 · Integración médica y mejora continua</h3>
                     <p>Doy seguimiento post-sesión y, si la colaboración es estable, revisamos y mejoramos juntos los protocolos médicos.</p>
                 </li>
             </ol>
@@ -826,7 +916,9 @@
                 </div>
             </div>
 
-            <p class="method-closing">Comparto lineamientos y plantillas de este método bajo una licencia de uso interno mientras dure nuestra colaboración.</p>
+            <p class="method-closing">
+                Este marco clínico se adapta a la realidad de cada centro y se integra sobre tus protocolos existentes, sin imponer una forma única de trabajar.
+            </p>
         </div>
     </section>
 
@@ -843,55 +935,48 @@
                 <div class="card">
                     <h3>Anamnesis psicodélica estructurada</h3>
                     <p>
-                        Historia clínica específica para psilocibina, que ordena datos médicos, antecedentes, contexto y 
-                        estilo de vida para tomar decisiones claras de aptitud.
+                        Historia clínica específica que ordena datos médicos, antecedentes, contexto y estilo de vida para tomar decisiones claras de aptitud.
                     </p>
                 </div>
                 <div class="card">
                     <h3>Protocolo de idoneidad y riesgos</h3>
                     <p>
-                        Criterios de exclusión, factores de riesgo relativos y decisiones Apto / Apto con condiciones / 
-                        No apto, documentadas para proteger al participante y al centro.
+                        Criterios de exclusión y de riesgo relativo, con decisiones documentadas: Apto / Apto con condiciones / No apto.
                     </p>
                 </div>
                 <div class="card">
                     <h3>Historia clínica en 4 fases</h3>
                     <p>
-                        Registro clínico antes, durante y después de la sesión, incluyendo observaciones de la experiencia 
-                        y evolución física en el proceso de integración.
+                        Registro antes, durante y después de la sesión, incluyendo observaciones de la experiencia y evolución física en integración.
                     </p>
                 </div>
                 <div class="card">
                     <h3>Hoja de ruta e integración HOPE</h3>
                     <p>
-                        Plantillas para organizar objetivos, narrativa, afterglow y plan de acción, convirtiendo insights en 
-                        cambios medibles de comportamiento y salud.
+                        Plantillas para organizar objetivos, narrativa, afterglow y plan de acción, traduciendo insights en cambios medibles.
                     </p>
                 </div>
                 <div class="card">
                     <h3>Sistema OAV y perfil de experiencia</h3>
                     <p>
-                        Uso de escalas y perfiles de experiencia para entender mejor lo vivido, ajustar la integración y 
-                        fortalecer el rigor de tus programas.
+                        Escalas y perfiles para entender mejor lo vivido, ajustar la integración y fortalecer el rigor de tus programas.
                     </p>
                 </div>
                 <div class="card">
                     <h3>Seguridad clínica y emergencias</h3>
                     <p>
-                        Lineamientos para manejo de eventos agudos, primeras 72 horas, códigos de seguridad del espacio y 
-                        criterios de derivación médica.
+                        Lineamientos para manejo de eventos agudos, primeras 72 horas, códigos de seguridad del espacio y criterios de derivación médica.
                     </p>
                 </div>
             </div>
 
             <p class="method-closing">
-                Estas herramientas forman un sistema coherente. Podemos usarlo como soporte médico externo o como base 
-                para la formación clínica de tu equipo.
+                Estas herramientas forman un sistema coherente que puede usarse como soporte médico externo o como base para fortalecer la práctica clínica de tu equipo.
             </p>
         </div>
     </section>
 
-    <!-- MODELOS DE COLABORACIÓN -->
+    <!-- FORMAS DE TRABAJAR CONMIGO -->
     <section id="models">
         <div class="container">
             <h2>Formas de trabajar conmigo</h2>
@@ -899,24 +984,38 @@
                 <div class="model-block">
                     <h3>Servicios clínicos para tus participantes</h3>
                     <p>
-                        Ideal si necesitas un médico que acompañe a tu centro desde fuera. Me encargo de la parte clínica: 
-                        evaluación de idoneidad, preparación fisiológica, soporte remoto durante las sesiones e integración médica 
-                        posterior, usando todo el sistema Mountain. Entrego informes claros para que tu equipo tome mejores decisiones.
+                        Ideal si necesitas un médico que acompañe a tu centro desde fuera. Me encargo de la parte clínica: evaluación de
+                        idoneidad, preparación fisiológica básica, soporte remoto durante las sesiones e integración médica posterior. Actúo como figura clínica de referencia, sin interferir con la visión terapéutica del proyecto.
                     </p>
+                    <ul class="bullets">
+                        <li>Cuando tu centro no cuenta con médico propio o su agenda está saturada.</li>
+                        <li>Cuando tienes casos complejos y quieres respaldo clínico específico para psilocibina.</li>
+                        <li>Cuando necesitas apoyo inmediato mientras defines tu protocolo interno.</li>
+                    </ul>
                 </div>
                 <div class="model-block">
                     <h3>Mentoría y formación para tu equipo</h3>
                     <p>
-                        Si ya tienes un volumen estable de participantes y quieres fortalecer la autonomía de tu equipo, podemos trabajar 
-                        en formato mentoría. Te enseño a utilizar las herramientas del sistema clínico (anamnesis, protocolos de riesgo, 
-                        historia en 4 fases, integración HOPE, seguridad y matriz de rigor) para que tu centro gane estructura y criterios propios.
+                        Si ya tienes un volumen estable de participantes y quieres que tu equipo gane autonomía clínica,
+                        podemos trabajar en formato mentoría. Te enseño a utilizar el sistema clínico para que tu centro
+                        construya estructura y criterios propios sin perder su estilo.
                     </p>
+                    <ul class="bullets">
+                        <li>Cuando ya realizas retiros o sesiones de forma regular y quieres dejar de improvisar.</li>
+                        <li>Cuando deseas procesos claros para documentar cada decisión importante.</li>
+                        <li>Cuando buscas escalar tu centro manteniendo seguridad, ética y coherencia clínica.</li>
+                    </ul>
                 </div>
             </div>
             <p class="models-closing">
-                En ambos casos, diseñamos un acuerdo a medida según la realidad de tu centro y la regulación de tu país. 
-                Podemos empezar con un piloto clínico, una mentoría breve o una combinación de ambos.
+                En ambos casos, diseñamos un acuerdo a medida según la realidad de tu centro y la regulación de tu país.
+                Podemos empezar con un piloto clínico, una mentoría breve o una combinación de ambos. Si después del primer
+                mes de trabajo no percibes más claridad y estructura en tu práctica, podemos pausar la colaboración; te
+                quedas con todo lo ya implementado.
             </p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://wa.me/593989760520" class="btn">Agendar una llamada clínica</a>
+            </div>
         </div>
     </section>
 
@@ -962,6 +1061,14 @@
                     <h3>¿Das consejos sobre el uso de sustancias o dosis?</h3>
                     <p>No asesoro sobre acceso ni uso de sustancias. Mi trabajo se centra en la evaluación médica, la seguridad y el acompañamiento clínico en contextos donde el centro ya trabaja dentro de un marco regulado.</p>
                 </div>
+                <div class="faq-item">
+                    <h3>¿Tu trabajo reemplaza asesoría legal o seguros?</h3>
+                    <p>
+                        No. Mi rol es clínico. Te ayudo a mejorar el screening, los protocolos de seguridad y la documentación
+                        médica, de forma alineada con buenas prácticas internacionales. Las decisiones legales, de seguros o
+                        de estructura societaria deben revisarse siempre con abogados y asesores locales.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -970,7 +1077,11 @@
     <section id="final-cta">
         <div class="container">
             <h2>Hablemos sobre tu centro y su marco clínico</h2>
-            <p class="final-text">Si quieres que tu centro trabaje con más seguridad, claridad y respaldo médico, podemos diseñar una colaboración a medida. Cuéntame cómo trabajan hoy y qué necesitan.</p>
+            <p class="final-text">
+                Si diriges un centro o retiro y quieres trabajar con más seguridad, claridad y estructura clínica, podemos diseñar una
+                colaboración a medida. Revisamos tu situación actual y definimos juntos el siguiente paso: servicios médicos para tus
+                participantes, mentoría para tu equipo o una combinación de ambos, para que tu centro crezca sin sentir que caminas al borde del abismo clínico y reputacional.
+            </p>
             <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
         </div>
     </section>
