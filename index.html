@@ -530,7 +530,10 @@
             align-items: center;
             text-align: left;
             transition: background-color 0.3s;
-            user-select: none;
+            -webkit-user-select: none; /* Safari / iOS */
+            -moz-user-select: none;    /* Firefox antiguo */
+            -ms-user-select: none;     /* IE/Edge antiguo */
+            user-select: none;         /* estándar */
         }
 
         .faq-item h3:hover {
