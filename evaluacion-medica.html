@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jonathan Chávez - Protocolo de Cribado para Centros de Psilocibina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #13005d;
+            color: #f5f5dc;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* ======================== NAVEGACIÓN ======================== */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background-color: rgba(19, 0, 93, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(34, 163, 163, 0.2);
+        }
+        .nav-container {
+            max-width: 1000px; margin: 0 auto; padding: 0 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-size: 16px; font-weight: 700; color: #22a3a3;
+            text-decoration: none; letter-spacing: 0.5px;
+        }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a {
+            color: #f5f5dc; text-decoration: none;
+            font-size: 13px; font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .nav-links a:hover { color: #22a3a3; }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+
+        /* ======================== TIPOGRAFÍA ======================== */
+        h1 { font-size: 48px; font-weight: 700; line-height: 1.2; margin-bottom: 20px; color: #f5f5dc; }
+        h2 { font-size: 36px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; color: #f5f5dc; }
+        h3 { font-size: 22px; font-weight: 600; margin-bottom: 15px; color: #f5f5dc; }
+        p { margin-bottom: 15px; font-size: 16px; color: #f5f5dc; }
+
+        /* ======================== BOTONES ======================== */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: #22a3a3;
+            color: #13005d;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            border: 2px solid #22a3a3;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: transparent; color: #22a3a3; }
+        .btn-outline { background-color: transparent; color: #22a3a3; border: 2px solid #22a3a3; }
+        .btn-outline:hover { background-color: #22a3a3; color: #13005d; }
+
+        /* ======================== HERO ======================== */
+        section { padding: 80px 0; }
+        #hero { padding-top: 140px; padding-bottom: 100px; text-align: center; }
+        .hero-logo {
+            font-size: 14px; font-weight: 600; color: #22a3a3;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px;
+        }
+        #hero h1 { font-size: 56px; max-width: 900px; margin: 0 auto 25px; }
+        .hero-subtitle {
+            font-size: 20px; color: #b8a49d;
+            max-width: 760px; margin: 0 auto 28px; font-weight: 400;
+        }
+        .hero-cta-wrapper { margin-bottom: 40px; }
+
+        /* Selector */
+        .selector-wrap {
+            max-width: 820px;
+            margin: 0 auto 35px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            text-align: left;
+        }
+        .selector-card {
+            background-color: rgba(34, 163, 163, 0.08);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            padding: 18px 18px 16px;
+            border-radius: 6px;
+        }
+        .selector-card h3 { color: #22a3a3; font-size: 16px; margin-bottom: 8px; }
+        .selector-card p { font-size: 14px; margin-bottom: 14px; color: #f5f5dc; }
+        .selector-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #13005d;
+            background: #ffd700;
+            padding: 6px 10px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        .objections { max-width: 600px; margin: 0 auto; text-align: left; list-style: none; }
+        .objections li { padding: 12px 0; font-size: 15px; color: #f5f5dc; line-height: 1.6; }
+        .objections li:before { content: "✘ "; color: #22a3a3; font-weight: 700; margin-right: 10px; }
+
+        /* ======================== TARJETAS ======================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .card {
+            background-color: rgba(34, 163, 163, 0.08);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            padding: 40px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .card:hover {
+            background-color: rgba(34, 163, 163, 0.12);
+            border-color: rgba(34, 163, 163, 0.4);
+            transform: translateY(-5px);
+        }
+        .card h3 { color: #22a3a3; margin-bottom: 15px; }
+        .card p { font-size: 15px; color: #f5f5dc; line-height: 1.7; }
+
+        /* ======================== SECCIONES GENERALES ======================== */
+        #problem { background-color: #fdf9f0; }
+        #problem h2, #problem h3, #problem p { color: #13005d; }
+        #problem .card { background-color: rgba(19, 0, 93, 0.05); border-color: rgba(34, 163, 163, 0.3); }
+        #problem .card h3 { color: #22a3a3; }
+        #problem .card p { color: #13005d; }
+
+        #protocol { background-color: #0a003d; }
+        #protocol h2, #protocol p { color: #f5f5dc; }
+        #protocol .card { background-color: rgba(34, 163, 163, 0.1); border-color: rgba(34, 163, 163, 0.3); }
+        #protocol .card h3 { color: #22a3a3; }
+        #protocol .card p { color: #f5f5dc; }
+
+        /* ======================== BLOQUE PARA QUIÉN ES ======================== */
+        #fit { background-color: #13005d; }
+        #fit h2 { text-align: center; }
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .fit-box {
+            background-color: rgba(34, 163, 163, 0.08);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            border-radius: 6px;
+            padding: 26px;
+        }
+        .fit-box h3 { color: #ffd700; font-size: 18px; }
+        .fit-box ul { margin-top: 12px; list-style: none; }
+        .fit-box li { padding: 8px 0 8px 28px; position: relative; font-size: 15px; color: #f5f5dc; }
+        .fit-box li:before { content: "✓"; position: absolute; left: 0; color: #22a3a3; font-weight: 900; }
+
+        .fit-box.no li:before { content: "✘"; color: #ffd700; }
+
+        /* ======================== PAQUETES ======================== */
+        #packages { background-color: #fdf9f0; }
+        #packages h2 { color: #13005d; }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .package-block {
+            background-color: #ffffff;
+            border: 2px solid rgba(34, 163, 163, 0.2);
+            padding: 40px 35px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .package-block:hover {
+            border-color: rgba(34, 163, 163, 0.4);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px);
+        }
+        .package-mockup-wrap {
+            background-color: #f4eee4;
+            padding: 16px 16px 12px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .package-mockup {
+            display: block;
+            max-width: 100%;
+            width: 280px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 6px;
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+            transition: transform 0.3s ease;
+        }
+        .package-block:hover .package-mockup { transform: scale(1.02); }
+        .package-block h3 { color: #22a3a3; font-size: 20px; margin-bottom: 10px; margin-top: 0; }
+        .package-subtitle {
+            font-size: 15px;
+            color: #13005d;
+            margin-bottom: 16px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .price-pill {
+            display: inline-block;
+            margin: 8px 0 18px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(34, 163, 163, 0.12);
+            border: 1px solid rgba(34, 163, 163, 0.25);
+            color: #13005d;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .package-block ul { list-style: none; margin-bottom: 18px; }
+        .package-block li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            font-size: 15px;
+            color: #13005d;
+            line-height: 1.6;
+        }
+        .package-block li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #22a3a3;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .deliverables {
+            background: rgba(19, 0, 93, 0.04);
+            border: 1px solid rgba(34, 163, 163, 0.18);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+        .deliverables h4 {
+            color: #13005d;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+        .deliverables ul { list-style: none; margin: 0; }
+        .deliverables li {
+            padding: 8px 0 8px 26px;
+            position: relative;
+            font-size: 14px;
+            color: #13005d;
+        }
+        .deliverables li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22a3a3;
+            font-weight: 900;
+        }
+        .package-closing {
+            font-size: 14px;
+            color: #0a0a0a;
+            padding-top: 18px;
+            border-top: 1px solid rgba(34, 163, 163, 0.15);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* ======================== PASOS ======================== */
+        #process { background-color: #0a003d; }
+        #process h2 { color: #f5f5dc; }
+        .steps { max-width: 800px; margin: 50px auto 0; list-style: none; }
+        .steps li { margin-bottom: 40px; padding-left: 60px; position: relative; }
+        .steps li:before {
+            content: attr(data-step);
+            position: absolute; left: 0; top: 0;
+            width: 50px; height: 50px;
+            background-color: #22a3a3; color: #13005d;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 20px;
+        }
+        .steps li h3 { margin-bottom: 10px; font-size: 18px; color: #f5f5dc; }
+        .steps li p { font-size: 15px; color: #f5f5dc; }
+
+        /* ======================== ABOUT ======================== */
+        #about { background-color: #fdf9f0; }
+        #about h2 { color: #13005d; }
+        #about .about-text { color: #0a0a0a; }
+        #about .about-text p { color: #0a0a0a; font-size: 17px; line-height: 1.8; }
+
+        /* ======================== TESTIMONIOS ======================== */
+        #testimonials { background-color: #13005d; }
+        #testimonials h2 { color: #f5f5dc; }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial {
+            background-color: rgba(34, 163, 163, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 30px;
+            border-radius: 2px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .testimonial p:first-child { margin-bottom: 20px; font-style: italic; color: #f5f5dc; }
+        .testimonial p:last-child { color: #22a3a3; font-weight: 600; margin-bottom: 0; font-size: 14px; }
+
+        /* ======================== FAQ ======================== */
+        #faq { background-color: #fdf9f0; }
+        #faq h2 { color: #13005d; }
+        .faq-container { max-width: 800px; margin: 50px auto 0; }
+        .faq-item {
+            margin-bottom: 25px;
+            background-color: rgba(34, 163, 163, 0.08);
+            border: 1px solid rgba(34, 163, 163, 0.2);
+            border-radius: 4px;
+            padding: 0;
+            overflow: hidden;
+        }
+        .faq-item h3 {
+            color: #22a3a3;
+            margin-bottom: 0;
+            font-size: 16px;
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            transition: background-color 0.3s;
+            user-select: none;
+        }
+        .faq-item h3:hover { background-color: rgba(34, 163, 163, 0.15); }
+        .faq-item h3:before {
+            margin-left: 16px;
+            width: 20px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+            color: #22a3a3;
+        }
+        .faq-item.open h3:before { content: "−"; }
+        .faq-item:not(.open) h3:before { content: "+"; }
+        .faq-item p {
+            display: none;
+            padding: 0 25px 25px 25px;
+            color: #13005d;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .faq-item.open p { display: block; }
+        .faq-item.open { background-color: rgba(34, 163, 163, 0.12); border-color: rgba(34, 163, 163, 0.3); }
+
+        /* ======================== CTA FINAL ======================== */
+        #final-cta { background-color: #0a003d; }
+        #final-cta h2 { color: #ffd700; text-align: center; }
+        .final-cta-text {
+            max-width: 750px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #f5f5dc;
+        }
+        .final-cta-btn { text-align: center; }
+
+        /* ======================== CONTACTO ======================== */
+        #contact { background-color: #fdf9f0; text-align: center; }
+        #contact h2 { color: #13005d; }
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 15px;
+            color: #0a0a0a;
+        }
+        .contact-info p { margin-bottom: 12px; color: #0a0a0a; }
+        .contact-info a {
+            color: #22a3a3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover { color: #ffd700; }
+
+        /* ======================== FOOTER ======================== */
+        footer {
+            background-color: #13005d;
+            border-top: 1px solid rgba(34, 163, 163, 0.2);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #b8a49d;
+        }
+        footer p { color: #b8a49d; }
+        .social-links { margin-top: 15px; }
+        .social-links a {
+            color: #22a3a3;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: #ffd700; }
+
+        /* ======================== RESPONSIVE ======================== */
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            section { padding: 50px 0; }
+            #hero { padding-top: 110px; padding-bottom: 60px; }
+            #hero h1 { font-size: 36px; }
+            .hero-subtitle { font-size: 16px; }
+            .cards-grid, .packages-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .steps li { padding-left: 70px; }
+            .steps li:before { width: 60px; height: 60px; font-size: 24px; }
+            .package-mockup { width: 260px; }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            #hero h1 { font-size: 28px; }
+            .hero-subtitle { font-size: 14px; }
+            section { padding: 40px 0; }
+            .btn { padding: 12px 24px; font-size: 12px; }
+            .faq-item h3 { padding: 20px; font-size: 15px; }
+            .faq-item p { padding: 0 20px 20px 20px; }
+            .package-block { padding: 30px 20px; }
+            .package-mockup { width: 220px; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Dr. Jonathan Chávez - Médico Psicodélico</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#problem">El problema</a></li>
+                <li><a href="#protocol">Protocolo HOPE</a></li>
+                <li><a href="#packages">Paquetes</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. HERO -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-logo">Protocolo de Cribado para Centros de Psilocibina</div>
+
+            <!-- Selector B2B/B2C -->
+            <div class="selector-wrap">
+                <div class="selector-card">
+                    <div class="selector-tag">B2B · Centros / Facilitadores</div>
+                    <h3>Implementación de cribado (DIY + acompañamiento)</h3>
+                    <p>Te ayudo a diseñar y operar un sistema de admisión, documentación y manejo de riesgos para tu centro.</p>
+                    <a href="#packages" class="btn">Ver paquetes</a>
+                </div>
+                <div class="selector-card">
+                    <div class="selector-tag">B2C · Participantes derivados</div>
+                    <h3>Evaluación médica por red flags (lo hago por ti)</h3>
+                    <p>Si eres participante derivado por tu facilitador, aquí encuentras la evaluación médica + dictamen.</p>
+                    <!-- Ajusta el href si tu archivo se llama distinto -->
+                    <a href="evaluacion-medica.html" class="btn btn-outline">Ir a evaluación médica</a>
+                </div>
+            </div>
+
+            <h1>Tu centro no puede seguir decidiendo a quién admite solo por intuición</h1>
+            <p class="hero-subtitle">
+                Te ayudo a diseñar e implementar un Protocolo de Cribado y Manejo de Riesgos para sesiones con psilocibina, para que sepas a quién admitir, a quién no y cómo documentar cada decisión.
+            </p>
+
+            <div class="hero-cta-wrapper">
+                <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
+            </div>
+
+            <ul class="objections">
+                <li>No más decisiones clínicas en soledad</li>
+                <li>No más criterios "implícitos" que varían cada semana</li>
+                <li>No más improvisar ante casos límite</li>
+                <li>No más documentación débil ante posibles preguntas</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 2. EL PROBLEMA QUE RESUELVO -->
+    <section id="problem">
+        <div class="container">
+            <h2>El problema que resuelvo en tu centro</h2>
+            <p>
+                Muchos centros tienen buena intención pero protocolos débiles. Hoy admiten participantes sin criterios claros, confunden crisis médica con proceso espiritual, y casi no documentan decisiones. Eso genera riesgo clínico y reputacional.
+            </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Admisión sin criterios escritos</h3>
+                    <p>
+                        Cada facilitador decide diferente. No hay exclusión clara, ni categorización de riesgos relativos. El resultado: inconsistencia y exposición operativa.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Confundir crisis médica con experiencia difícil</h3>
+                    <p>
+                        Sin capacitación clínica, tu equipo no distingue signos de alarma física. Pueden contener en sala lo que debería ser derivación urgente.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Documentación insuficiente si alguien pide explicaciones</h3>
+                    <p>
+                        Sin historia clínica, consentimiento informado y registros de decisión, no puedes defenderte. La improvisación deja pistas débiles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROTOCOLO DE CRIBADO HOPE -->
+    <section id="protocol">
+        <div class="container">
+            <h2>Qué es el Protocolo de Cribado HOPE</h2>
+            <p style="text-align: center; max-width: 750px; margin: 0 auto 50px;">
+                Un sistema estructurado en 3 componentes que trabajan juntos para tomar decisiones de admisión más seguras, documentadas y aplicables a tu realidad.
+            </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Guía de exclusión y manejo de riesgos</h3>
+                    <p>
+                        Define exclusión absoluta ("NO rotundo"), factores de riesgo relativos ("proceder con ajustes") y procedimiento básico de documentación y derivación. Es tu árbol de decisión clínico.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Modelo extrafarmacológico y rasgos de personalidad</h3>
+                    <p>
+                        Añade predictores: absorción, apertura, optimismo, neuroticismo, regulación emocional. Te permite ajustar preparación y setting según el perfil del participante.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Evaluación médica y psicológica especializada</h3>
+                    <p>
+                        Indica cuándo entran médico, psicólogo clínico o psiquiatra. Incluye criterios de escalas, labs básicos, interconsulta y límites profesionales claros.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3.5 PARA QUIÉN ES / NO ES -->
+    <section id="fit">
+        <div class="container">
+            <h2>¿Para quién es esto?</h2>
+            <div class="fit-grid">
+                <div class="fit-box">
+                    <h3>Es para ti si…</h3>
+                    <ul>
+                        <li>Tu equipo admite participantes sin criterios escritos y consistentes.</li>
+                        <li>Quieres reducir riesgo clínico y mejorar documentación.</li>
+                        <li>Tienes casos “límite” y no quieres improvisar en vivo.</li>
+                        <li>Buscas un sistema aplicable a tu país y a tu operación real.</li>
+                    </ul>
+                </div>
+                <div class="fit-box no">
+                    <h3>No es para ti si…</h3>
+                    <ul>
+                        <li>Quieres “aprobar” a todos aunque existan banderas rojas.</li>
+                        <li>No estás dispuesto a documentar decisiones clínicas.</li>
+                        <li>Tu equipo no seguirá un árbol de decisión y protocolos básicos.</li>
+                        <li>Buscas solo teoría sin implementación real.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PAQUETES DE IMPLEMENTACIÓN -->
+    <section id="packages">
+        <div class="container">
+            <h2>Paquetes de implementación</h2>
+            <div class="packages-grid">
+
+                <div class="package-block">
+                    <div class="package-mockup-wrap">
+                        <img src="imag/cribado-mockup.png" alt="Mockup Protocolo de Cribado Esencial" class="package-mockup">
+                    </div>
+                    <h3>Protocolo de Cribado Esencial</h3>
+                    <p class="package-subtitle">En 10 días tienes un cribado mínimo viable funcionando con tu próximo grupo.</p>
+                    <span class="price-pill">Inversión desde: USD $350</span>
+                    <ul>
+                        <li>Definimos criterios de exclusión absoluta y "apto con condiciones" según tu tipo de centro.</li>
+                        <li>Diseñamos y adaptamos tu formulario de screening para psilocibina.</li>
+                        <li>Creas un árbol de decisión simple: Apto / Apto con condiciones / No apto.</li>
+                        <li>Estableces cómo documentar cada decisión en historia clínica para proteger a tu equipo.</li>
+                        <li>2–3 horas de trabajo 1:1 centradas en tus casos reales.</li>
+                    </ul>
+
+                    <div class="deliverables">
+                        <h4>Entregables</h4>
+                        <ul>
+                            <li>Formulario de screening (Google Form / Typeform) adaptado</li>
+                            <li>Árbol de decisión Apto / Condicionado / No apto</li>
+                            <li>Checklist de red flags + criterios de derivación</li>
+                            <li>Plantilla mínima de registro/documentación</li>
+                        </ul>
+                    </div>
+
+                    <p class="package-closing">
+                        Pensado para centros que quieren dejar de improvisar admisiones, sin meterse todavía en evaluaciones complejas.
+                    </p>
+                </div>
+
+                <div class="package-block">
+                    <div class="package-mockup-wrap">
+                        <img src="imag/cribado-predictores-mockup.png" alt="Mockup Sistema Completo de Riesgos y Predictores" class="package-mockup">
+                    </div>
+                    <h3>Sistema Completo de Riesgos y Predictores</h3>
+                    <p class="package-subtitle">En 30 días pasas de no tener sistema a un protocolo completo de cribado, predictores y documentación.</p>
+                    <span class="price-pill">Inversión desde: USD $750</span>
+                    <ul>
+                        <li>Incluye todo lo del Protocolo de Cribado Esencial.</li>
+                        <li>Implementamos evaluación de rasgos y factores extrafarmacológicos.</li>
+                        <li>Adaptamos historia clínica mínima viable para contextos con psilocibina.</li>
+                        <li>Trabajamos tu consentimiento informado específico para estas intervenciones.</li>
+                        <li>Definimos lineamientos básicos de primera respuesta y escalamiento ante eventos agudos.</li>
+                        <li>Te ayudo a decidir cuándo derivar a evaluación médica/psiquiátrica especializada.</li>
+                        <li>4 horas de trabajo 1:1, aplicadas a tus casos y materiales reales.</li>
+                    </ul>
+
+                    <div class="deliverables">
+                        <h4>Entregables</h4>
+                        <ul>
+                            <li>Sistema de cribado + predictores (estructura y aplicación)</li>
+                            <li>Historia clínica mínima viable (plantilla + guía)</li>
+                            <li>Consentimiento informado adaptado al servicio</li>
+                            <li>Protocolo de derivación (médico/psicológico/psiquiátrico)</li>
+                            <li>Checklist de primera respuesta + escalamiento</li>
+                        </ul>
+                    </div>
+
+                    <p class="package-closing">
+                        Pensado para centros con volumen estable que quieren escalar con más rigor clínico y menos improvisación.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/593989760520" class="btn">Agendar diagnóstico de cribado</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CÓMO TRABAJAMOS -->
+    <section id="process">
+        <div class="container">
+            <h2>Cómo trabajamos: Proceso en 3 pasos</h2>
+            <ol class="steps">
+                <li data-step="1">
+                    <h3>Llamada clínica inicial</h3>
+                    <p>Entiendo cómo funciona tu centro, país, volumen, casos y puntos de riesgo. Definimos si es Esencial o Sistema Completo.</p>
+                </li>
+                <li data-step="2">
+                    <h3>Adaptación del protocolo a tu realidad</h3>
+                    <p>Diseñamos criterios, formularios y árbol de decisión específico para tu centro. Todo basado en tus casos reales.</p>
+                </li>
+                <li data-step="3">
+                    <h3>Implementación y revisión final</h3>
+                    <p>Aplicamos el sistema con tus primeros casos, refinamos protocolos y aseguramos operación independiente.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- 6. SOBRE MÍ -->
+    <section id="about">
+        <div class="container">
+            <h2>Sobre el Dr. Jonathan Chávez</h2>
+            <div class="about-text">
+                <p>Soy médico general y funcional, con formación en ciencia y medicina psicodélica. Me especializo en seguridad clínica, cribado estructurado y documentación en contextos con psilocibina.</p>
+                <p>Mi objetivo es que centros como el tuyo pasen de improvisar a tener un protocolo claro, documentado y aplicable, sin perder su identidad terapéutica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>Lo que destacan de mi trabajo</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Muy satisfecho de conocer a un profesional médico experto en psilocibina. Cubre protocolos de seguridad desde el consentimiento informado hasta documentación clínica. Ético, humano y comprometido."</p>
+                    <p>— Sergio Armando Salazar Arriola, Médico</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Su experiencia basada en estudios fue invaluable. Las recomendaciones reforzaron nuestro protocolo de riesgos y criterios de exclusión. Información útil y aplicable a nuestra realidad."</p>
+                    <p>— James Emerson Mazariegos, Director de centro psicodélico</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Jonathan es mi referencia médica para clientes que necesitan respaldo. Uno de pocos médicos funcionales en español con información actualizada, ética y aplicable a psilocibina."</p>
+                    <p>— Montserrat Morán Zebadúa, Health Coach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>¿Puedo aplicar esto si mi centro no tiene médico interno?</h3>
+                    <p>Sí. El protocolo está diseñado para que tu equipo no médico pueda aplicar screening claro y escalar cuando sea necesario.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Se adapta al marco legal de mi país?</h3>
+                    <p>Lo adaptamos a buenas prácticas clínicas y documentación que funciona localmente. Lo legal/seguros se revisa con abogados de tu país.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Trabajas de forma presencial o remota?</h3>
+                    <p>Vivo en Ecuador. Puedo trabajar presencialmente en contextos específicos dentro del país. Para otros países, colaboro remoto.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Interfieres en el rol del terapeuta o facilitador?</h3>
+                    <p>No. Mi rol se limita a cribado, documentación y criterios de seguridad clínica. Respeto la metodología terapéutica de tu centro.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Tu trabajo reemplaza asesoría legal o seguros?</h3>
+                    <p>No. Mi rol es clínico. La parte legal/seguros se debe revisar siempre con abogados locales.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué pasa si después del primer mes no veo cambios?</h3>
+                    <p>Si después del primer mes no percibes más claridad y estructura, podemos pausar; te quedas con lo implementado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="final-cta">
+        <div class="container">
+            <h2>Hablemos sobre tu cribado</h2>
+            <p class="final-cta-text">
+                Si quieres revisar el cribado y el marco de riesgos de tu centro, escríbeme y vemos si tiene sentido empezar por el Esencial o el Sistema Completo.
+            </p>
+            <div class="final-cta-btn">
+                <a href="https://wa.me/593989760520" class="btn">Escribir por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> jonathanchavezsuarez@gmail.com</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/593989760520">+593 98 976 0520</a></p>
+                <p><strong>Ubicación:</strong> Ecuador · Colaboración remota para centros en Latinoamérica</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>Mira mi trabajo en:</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@doctorhopeec." target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://www.linkedin.com/in/drhopeec/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/drhopeec/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Acordeón para FAQ
+        document.querySelectorAll('#faq .faq-item h3').forEach(heading => {
+            heading.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
